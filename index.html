@@ -2,109 +2,513 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lina S.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Lina S | Biostatistics & Population Health Sciences </title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f8fa;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: #4b5563;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #111827;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 7rem 0 5rem;
+      background: white;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: -2px;
+    }
+
+    .hero-text h2 {
+      font-size: 1.2rem;
+      color: #4b5563;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text p {
+      color: #6b7280;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.9rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-dark {
+      background: #111827;
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: #000;
+    }
+
+    .btn-light {
+      border: 1px solid #d1d5db;
+      background: white;
+    }
+
+    .btn-light:hover {
+      background: #f3f4f6;
+    }
+
+    .hero-image img {
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      letter-spacing: -1px;
+    }
+
+    .section-text {
+      max-width: 850px;
+      color: #4b5563;
+    }
+
+    /* CARDS */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 18px;
+      border: 1px solid #e5e7eb;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .skill {
+      background: white;
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      font-size: 0.9rem;
+    }
+
+    /* TIMELINE */
+
+    .timeline {
+      margin-top: 2rem;
+    }
+
+    .timeline-item {
+      background: white;
+      border-left: 4px solid #111827;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+    }
+
+    .timeline-item h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item span {
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      background: #111827;
+      color: white;
+      padding: 3rem;
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .contact-box p {
+      color: #d1d5db;
+      margin-bottom: 2rem;
+    }
+
+    .contact-box a {
+      color: white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.6rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .nav-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero {
+        padding-top: 4rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="logo">LS</div>
+  <!-- NAVIGATION -->
 
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Research</a></li>
-      <li><a href="#research">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <nav>
+    <div class="container nav-wrapper">
+      <div class="logo">Your Name</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#skills">Skills</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <main class="hero">
+  <!-- HERO -->
 
-    <div class="hero-content">
+  <section class="hero">
+    <div class="container hero-grid">
 
-      <p class="small-text">
-        PUBLIC HEALTH · BIOSTATISTICS · RESEARCH
-      </p>
+      <div class="hero-text">
+        <h1>Aspiring Biostatistician & Population Health Researcher</h1>
 
-      <h1>
-        Building at the intersection of
-        health, data, and systems.
-      </h1>
+        <h2>
+          Focused on health equity, environmental health,
+          AI-informed healthcare systems, and data-driven policy innovation.
+        </h2>
 
-      <p class="description">
-        Interested in biostatistics, environmental health,
-        epidemiology, and computational approaches to public health.
-      </p>
-
-    </div>
-
-  </main>
-
-  <section id="about" class="section">
-    <h2>About</h2>
-
-    <p>
-      Currently exploring research and technical work related to
-      respiratory health, healthcare systems, and quantitative methods.
-    </p>
-  </section>
-
-  <section id="work" class="section">
-    <h2>Selected Work</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <span>01</span>
-        <h3>Asthma & Respiratory Health</h3>
         <p>
-          Population health analysis focused on socioeconomic
-          disadvantage and healthcare access.
+          I am an emerging scholar focused on advancing equitable health systems
+          through biostatistics, community-based research, environmental health,
+          and interdisciplinary public health innovation.
         </p>
+
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-dark">Download CV</a>
+          <a href="#contact" class="btn btn-light">Contact</a>
+        </div>
       </div>
 
-      <div class="card">
-        <span>02</span>
-        <h3>Healthcare Analytics</h3>
-        <p>
-          Exploring statistical and computational approaches
-          to healthcare research.
-        </p>
-      </div>
-
-      <div class="card">
-        <span>03</span>
-        <h3>Research Development</h3>
-        <p>
-          Building long-term interests in biostatistics,
-          epidemiology, and data science.
-        </p>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop" alt="Professional headshot">
       </div>
 
     </div>
   </section>
 
-  <section id="research" class="section">
-    <h2>Research Interests</h2>
+  <!-- ABOUT -->
 
-    <ul class="research-list">
-      <li>Biostatistics</li>
-      <li>Environmental Epidemiology</li>
-      <li>Healthcare Systems</li>
-      <li>Machine Learning in Public Health</li>
-      <li>Respiratory Disease Research</li>
-    </ul>
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+
+      <p class="section-text">
+        My academic and professional interests center on biostatistics,
+        population health sciences, environmental health, and health policy.
+        I am particularly interested in leveraging data-driven methods and
+        interdisciplinary research to improve health outcomes for historically
+        underrepresented populations.
+        <br><br>
+        My work explores the intersection of statistical science, community health,
+        AI-informed healthcare systems, and evidence-based policy development.
+      </p>
+    </div>
   </section>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>lina.shaheed@duke.edu</p>
-    <p>+1 (984) 208-6462</p>
+  <!-- RESEARCH -->
 
+  <section id="research">
+    <div class="container">
+
+      <h2 class="section-title">Research & Projects</h2>
+
+      <div class="card-grid">
+
+        <div class="card">
+          <h3>Tobacco 21 Policy Research</h3>
+          <p>
+            Presented research evaluating the impact of Tobacco 21 policies
+            on cannabis-related public health outcomes and behavioral trends.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Environmental Health Initiatives</h3>
+          <p>
+            Community-based environmental health engagement focused on climate,
+            air quality, and population-level health outcomes.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>AI & Healthcare Systems</h3>
+          <p>
+            Exploring theoretical frameworks for integrating AI models into
+            healthcare and policy decision-making systems.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Health Equity Research</h3>
+          <p>
+            Focused on improving health outcomes through equitable,
+            systems-level public health strategies and data-informed interventions.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
   </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="container">
+
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills">
+        <div class="skill">R</div>
+        <div class="skill">Python</div>
+        <div class="skill">SAS</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Biostatistics</div>
+        <div class="skill">Statistical Modeling</div>
+        <div class="skill">Data Visualization</div>
+        <div class="skill">Health Policy Analysis</div>
+        <div class="skill">Population Health</div>
+        <div class="skill">Research Methods</div>
+        <div class="skill">Community-Based Research</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+
+  <section id="leadership">
+    <div class="container">
+
+      <h2 class="section-title">Leadership & Service</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <h4>Culture, Engagement & Impact Committee (CEIC)</h4>
+          <span>Duke Department of Population Health Sciences</span>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Mentorship & Student Support</h4>
+          <span>Undergraduate and graduate student mentorship initiatives</span>
+        </div>
+
+        <div class="timeline-item">
+          <h4>Community Health Engagement</h4>
+          <span>Environmental health and population health outreach efforts</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="container">
+
+      <div class="contact-box">
+        <h2>Connect With Me</h2>
+
+        <p>
+          I am interested in research collaborations, academic opportunities,
+          healthcare innovation, and interdisciplinary public health initiatives.
+        </p>
+
+        <a href="mailto:lina.shaheed@duke.edu">
+          lina.shaheed@duke.edu
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      © 2026 Lina Shaheed —  Portfolio
+    </div>
+  </footer>
 
 </body>
 </html>
