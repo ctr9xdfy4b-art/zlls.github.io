@@ -1,189 +1,216 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  background: #f5f5f3;
-  color: #111;
 
-  font-family: -apple-system, BlinkMacSystemFont,
-  "Segoe UI", sans-serif;
+    font-family: -apple-system,
+                 BlinkMacSystemFont,
+                 "Segoe UI",
+                 sans-serif;
 
-  line-height: 1.6;
+    color: #222;
+    background: white;
+
+    line-height: 1.7;
 }
 
-/* NAV */
+/* SIDEBAR */
 
-.navbar {
-  position: fixed;
-  top: 0;
+.sidebar {
 
-  width: 100%;
+    position: fixed;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    top: 0;
+    left: 0;
 
-  padding: 30px 8%;
+    width: 280px;
+    height: 100vh;
 
-  background: rgba(245,245,243,0.85);
-  backdrop-filter: blur(10px);
+    padding: 60px 40px;
 
-  z-index: 1000;
+    border-right: 1px solid #e5e5e5;
+
+    background: white;
 }
 
-.logo {
-  font-size: 0.95rem;
-  letter-spacing: 2px;
-  font-weight: 600;
+.sidebar h1 {
+
+    font-size: 1.8rem;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
 }
 
-.nav-links {
-  display: flex;
-  gap: 40px;
+.sidebar p {
 
-  list-style: none;
+    margin-bottom: 15px;
+
+    color: #666;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #222;
+.sidebar nav {
 
-  font-size: 0.95rem;
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
-.nav-links a:hover {
-  opacity: 0.5;
+.sidebar nav a {
+
+    color: #444;
+
+    text-decoration: none;
+
+    transition: 0.2s;
 }
 
-/* HERO */
+.sidebar nav a:hover {
 
-.hero {
-  min-height: 100vh;
-
-  display: flex;
-  align-items: center;
-
-  padding: 0 8%;
+    color: black;
 }
 
-.hero-content {
-  max-width: 900px;
-}
+/* MAIN CONTENT */
 
-.small-text {
-  letter-spacing: 3px;
-  font-size: 0.8rem;
+.main-content {
 
-  margin-bottom: 30px;
+    margin-left: 320px;
 
-  color: #777;
-}
+    max-width: 900px;
 
-.hero h1 {
-  font-size: 5.5rem;
-  line-height: 1.05;
-
-  font-weight: 500;
-
-  margin-bottom: 30px;
-
-  max-width: 900px;
-}
-
-.description {
-  max-width: 650px;
-
-  font-size: 1.2rem;
-  color: #555;
+    padding: 80px 60px;
 }
 
 /* SECTIONS */
 
-.section {
-  padding: 120px 8%;
+section {
+
+    margin-bottom: 100px;
 }
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
+section h2 {
 
-  font-weight: 500;
+    font-size: 1.4rem;
+
+    margin-bottom: 30px;
+
+    font-weight: 600;
 }
 
-/* GRID */
+/* EXPERIENCE */
 
-.grid {
-  display: grid;
+.experience-item {
 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-  gap: 30px;
+    margin-bottom: 40px;
 }
 
-.card {
-  padding: 35px;
+.experience-item h3 {
 
-  border: 1px solid #ddd;
+    font-size: 1.05rem;
 
-  background: rgba(255,255,255,0.5);
-
-  border-radius: 20px;
-
-  transition: 0.3s;
+    margin-bottom: 5px;
 }
 
-.card:hover {
-  transform: translateY(-6px);
+.meta {
+
+    color: #777;
+
+    font-size: 0.95rem;
+
+    margin-bottom: 12px;
 }
 
-.card span {
-  color: #888;
-  font-size: 0.9rem;
+/* EDUCATION */
+
+.education-item {
+
+    margin-bottom: 35px;
 }
 
-.card h3 {
-  margin: 20px 0;
-  font-size: 1.4rem;
+/* SKILLS */
 
-  font-weight: 500;
+.skill-grid {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
 }
 
-/* RESEARCH */
+.skill-grid span {
 
-.research-list {
-  list-style: none;
+    padding: 8px 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 4px;
+
+    font-size: 0.9rem;
 }
 
-.research-list li {
-  padding: 18px 0;
+/* LINKS */
 
-  border-bottom: 1px solid #ddd;
+a {
 
-  font-size: 1.1rem;
+    color: #0057b8;
+}
+
+a:hover {
+
+    opacity: 0.8;
+}
+
+/* CV BUTTON */
+
+.cv-button {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #ccc;
+
+    text-decoration: none;
+
+    color: #222;
+}
+
+.cv-button:hover {
+
+    background: #f5f5f5;
 }
 
 /* MOBILE */
 
-@media(max-width: 768px) {
+@media (max-width: 900px) {
 
-  .hero h1 {
-    font-size: 3rem;
-  }
+    .sidebar {
 
-  .navbar {
-    flex-direction: column;
-    gap: 20px;
-  }
+        position: relative;
 
-  .nav-links {
-    gap: 20px;
-  }
+        width: 100%;
+        height: auto;
 
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .main-content {
+
+        margin-left: 0;
+
+        padding: 40px 25px;
+    }
 }
